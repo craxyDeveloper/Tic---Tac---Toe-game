@@ -33,7 +33,7 @@ function generating(){
                 
                 checkWinner();
                 
-                drawGame(moves);
+             
                 
 
             
@@ -56,6 +56,7 @@ function checkWinner(){
             }       
         }
     }
+    drawGame();
 }
 function resetgame(){
     turnO=true;
@@ -64,6 +65,7 @@ function resetgame(){
         box.disabled=false;
     }
     p.innerText='';
+    moves=0;
      
 }
 resetbtn.addEventListener('click',()=>{
@@ -74,11 +76,12 @@ function disableboxes(){
         box.disabled=true;  
       }
 }
-function drawGame(moves){
+function drawGame(){
     
     
-    if(moves===9 && !checkWinner()){
+    if(moves===9 ){
         p.innerText = "Game was draw!";
+        disableboxes();
     }
     
 }
